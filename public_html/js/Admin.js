@@ -21,14 +21,14 @@ $(function () {
       Backendless.UserService.login(email, password, true, new Backendless.Async(userLoggedIn, gotError));
   });
   
-  $(document).on('click', '.add-blog', function(){
-      var addBlogScript = $("#add-blog-template").html();
-  var addBlogTemplate = Handlebars.compile(addBlogScript);
+  $(document).on('click', '.add-task', function(){
+      var addTaskScript = $("#add-task-template").html();
+  var addTaskTemplate = Handlebars.compile(addTaskScript);
   
-  $('.main-container').html(addBlogTemplate);
+  $('.main-container').html(addTaskTemplate);
   tinymce.init({ selector:'textarea'});
   });
-  $(document).on('submit', '.form-add-blog', function (event){
+  $(document).on('submit', '.form-add-task', function (event){
       event.preventDefault();
       
       var data = $(this).serializeArray(),
