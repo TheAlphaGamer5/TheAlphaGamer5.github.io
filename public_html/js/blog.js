@@ -41,3 +41,13 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+$(document).on('click', '.deleteB',function (event){
+  Materialize.toast('Deleted', 1500);
+  Backendless.Persistence.of(Posts).remove(event.target.attributes.data.nodeValue);
+  //setTimeout(location.reload(),100000000000);
+});
+
+$(document).on('click', '.checkmark',function (event){
+  Materialize.toast('Competed', 1500);
+});
