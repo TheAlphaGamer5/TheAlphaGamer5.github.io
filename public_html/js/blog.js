@@ -22,11 +22,7 @@ var blogTemplate = Handlebars.compile(blogScript);
 var blogHTML = blogTemplate(wrapper);
 
 $('.main-container').html(blogHTML);
- var taskStorage = Backendless.Persistence.of( Tasks);
-    var dataQuery = {
-         condition: "author = " + YOUR_ID_HERE
-    };
-    var myTasks = taskStorage.find( dataQuery );
+
 });
 
 function Posts(args) {
@@ -56,7 +52,7 @@ $(document).on('click', '.checkmark',function (event){
   Materialize.toast('Competed', 1500);
 });
 
-var taskStorage = Backendless.Persistence.of( Tasks);
+ var taskStorage = Backendless.Persistence.of( Tasks);
     var dataQuery = {
          condition: "author = " + YOUR_ID_HERE
     };
